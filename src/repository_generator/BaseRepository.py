@@ -62,6 +62,10 @@ class BaseRepository( ParentClass, git.Repo ):
 
                 if not paste_Path.exists() or overwrite:
                     print ('Copying Template Path: ' + str(paste_Path) )            
+
+                    if paste_Path.exists():
+                        paste_Path.remove( override = True )
+
                     copy_Path.copy( paste_Path, print_off=False ) 
                     formatted_string = self.format_string_by_atts( paste_Path.read() )
                     paste_Path.write( string = formatted_string )
