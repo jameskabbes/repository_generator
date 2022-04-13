@@ -2,6 +2,7 @@ import git
 import dir_ops as do
 import py_starter as ps
 from parent_class import ParentClass
+from pyrsistent import T
 
 class BaseRepository( ParentClass, git.Repo ):
 
@@ -46,7 +47,8 @@ class BaseRepository( ParentClass, git.Repo ):
 
     def copy_template_files( self, overwrite: bool = False ) -> None:
 
-        template_Paths = self.template_Dir.walk_contents_Paths( block_dirs = False, block_paths = False )
+        bad_folders = ['__pycache__','.git']
+        template_Paths = self.template_Dir.walk_contents_Paths( block_dirs = False, block_paths = False, folders_to_skip = bad_folders )
         rel_Paths = template_Paths.get_rels( self.template_Dir )
         paste_Paths = rel_Paths.join_Dir( self.Dir )
         
@@ -66,6 +68,14 @@ class BaseRepository( ParentClass, git.Repo ):
                         paste_Path.remove( override = True )
 
                     copy_Path.copy( paste_Path, print_off=False ) 
+
+                    try:
+                        string = paste_Path.read()
+                    except:
+                        print ('Skipping formatting, cannot read')
+                        continue
+                    
+                    # if we are able to read, then we shouldn't be copying it over
                     formatted_string = self.format_string_by_atts( paste_Path.read() )
                     paste_Path.write( string = formatted_string )
 
