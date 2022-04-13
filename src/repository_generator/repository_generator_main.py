@@ -1,5 +1,5 @@
-import dir_ops.dir_ops as do
-import py_starter.py_starter as ps
+import dir_ops as do
+import py_starter as ps
 import repository_generator
 
 def get_template():
@@ -12,11 +12,9 @@ def get_template():
     module = module_Path.import_module()
     return module.Repository
 
-def run( *args ):
+def generate( *args ):
     
     Repo_template = get_template()
-    R = Repo_template( repository_generator.cwd_Dir )
+    R = Repo_template( repository_generator._cwd_Dir )
     R.generate( overwrite = "overwrite" in args )
 
-if __name__ == '__main__':
-    run()
