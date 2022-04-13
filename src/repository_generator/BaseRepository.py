@@ -2,7 +2,6 @@ import git
 import dir_ops as do
 import py_starter as ps
 from parent_class import ParentClass
-from pyrsistent import T
 
 class BaseRepository( ParentClass, git.Repo ):
 
