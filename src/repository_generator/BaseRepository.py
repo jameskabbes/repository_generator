@@ -66,7 +66,7 @@ class BaseRepository( ParentClass, git.Repo ):
                     if paste_Path.exists():
                         paste_Path.remove( override = True )
 
-                    copy_Path.copy( paste_Path, print_off=False ) 
+                    copy_Path.copy( Destination = paste_Path, print_off=False ) 
 
                     try:
                         string = paste_Path.read()
