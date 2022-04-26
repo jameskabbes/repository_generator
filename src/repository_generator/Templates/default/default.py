@@ -1,5 +1,5 @@
 import os
-import dir_ops.dir_ops as do
+import dir_ops as do
 from repository_generator.BaseRepository import BaseRepository
 import py_starter.py_starter as ps
 
