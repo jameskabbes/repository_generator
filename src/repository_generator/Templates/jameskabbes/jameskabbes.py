@@ -14,6 +14,6 @@ class Repository( BaseRepository ):
         joined_kwargs = ps.merge_dicts( Repository.DEFAULT_KWARGS, kwargs )
         BaseRepository.__init__( self, *args, **joined_kwargs )
 
-        self.url_pages = 'https://jameskabbes.github.io/' + self.name
+        self.url_pages = 'https://jameskabbes.github.io/' + self.repo_name
 
  

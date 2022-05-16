@@ -1,4 +1,4 @@
-[GitHub Pages]({{url_pages}})
+[GitHub Pages]({-{url_pages}-})
 
-# {{name}}
-{{repo_description}}
+# {-{name}-}
+{-{repo_description}-}
