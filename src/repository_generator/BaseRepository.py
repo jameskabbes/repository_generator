@@ -13,6 +13,9 @@ class BaseRepository( ParentClass, git.Repo ):
     DEFAULT_KWARGS = {
     }
 
+    _IMP_ATTS = ['repo_name','Dir']
+    _ONE_LINE_ATTS = ['repo_name','Dir']
+
     def __init__( self, Dir, **kwargs ):
 
         git.Repo.__init__( self, Dir.p )
@@ -26,14 +29,6 @@ class BaseRepository( ParentClass, git.Repo ):
         self.url_nav = self.url_clone[ : -1*len('.git') ]
         self.repo_name = self.url_nav.split( '/' )[-1]
         self.readme_Path = self.Dir.join_Path( path = 'README.md' )
-
-    def print_imp_atts(self, **kwargs):
-
-        return self._print_imp_atts_helper( atts = ['repo_name','Dir'], **kwargs )
-
-    def print_one_line_atts(self, **kwargs):
-         
-        return self._print_one_line_atts_helper( atts = ['repo_name','Dir'], **kwargs )
 
     def generate( self, *args, overwrite: bool = False, **kwargs ):
 
