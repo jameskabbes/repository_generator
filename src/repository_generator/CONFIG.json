@@ -1,0 +1,62 @@
+{
+    "folders_to_skip":["__pycache__",".git"],
+    "overwrite": false,
+    "template":{
+        "name": "default",
+        "!Dir":{
+            "$ref": "{{templates.Dir}}",
+            "method":{
+                "name": "join_Dir",
+                "kwargs":{
+                    "path": "{{template.name}}"
+                }
+            }
+        }
+    },
+    "templates":{
+        "!Dir":{
+            "$ref": "{{_Dir}}",
+            "method":{
+                "name": "join_Dir",
+                "kwargs":{
+                    "path": "Templates"
+                }
+            }
+        }
+    },
+    "user_template":{
+        "!Dir":{
+            "$ref": "{{user_templates.Dir}}",
+            "method":{
+                "name": "join_Dir",
+                "kwargs":{
+                    "path": "{{template.name}}"
+                }
+            }
+        }
+    },
+    "user_templates":{
+        "!Dir":{
+            "$ref": "{{package.config.cache.Dir}}",
+            "method":{
+                "name": "join_Dir",
+                "kwargs":{
+                    "path": "user_templates"
+                }
+            }
+        }
+    },
+
+
+    "repo":{
+        "Dir": "{{cwd.Dir}}",
+        "!name": {
+            "$ref": "{{repo.Dir}}",
+            "method":{
+                "name": "lowest"
+            }
+        }
+    },
+    "author": "{{user_profile.name}}",
+    "github_pages_url": "https://{{user_profile.github.username}}.github.io/{{repo.name}}"
+}
