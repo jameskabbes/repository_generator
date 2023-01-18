@@ -4,18 +4,18 @@
     "template":{
         "name": "default",
         "!Dir":{
-            "$ref": "{{templates.Dir}}",
+            "$ref": "{R{templates.Dir}R}",
             "method":{
                 "name": "join_Dir",
                 "kwargs":{
-                    "path": "{{template.name}}"
+                    "path": "{R{template.name}R}"
                 }
             }
         }
     },
     "templates":{
         "!Dir":{
-            "$ref": "{{_Dir}}",
+            "$ref": "{R{_Dir}R}",
             "method":{
                 "name": "join_Dir",
                 "kwargs":{
@@ -26,18 +26,18 @@
     },
     "user_template":{
         "!Dir":{
-            "$ref": "{{user_templates.Dir}}",
+            "$ref": "{R{user_templates.Dir}R}",
             "method":{
                 "name": "join_Dir",
                 "kwargs":{
-                    "path": "{{template.name}}"
+                    "path": "{R{template.name}R}"
                 }
             }
         }
     },
     "user_templates":{
         "!Dir":{
-            "$ref": "{{package.config.cache.Dir}}",
+            "$ref": "{R{package.config.cache.Dir}R}",
             "method":{
                 "name": "join_Dir",
                 "kwargs":{
@@ -51,12 +51,12 @@
     "repo":{
         "Dir": "{{cwd.Dir}}",
         "!name": {
-            "$ref": "{{repo.Dir}}",
+            "$ref": "{R{repo.Dir}R}",
             "method":{
                 "name": "lowest"
             }
         }
     },
-    "author": "{{user_profile.name}}",
-    "github_pages_url": "https://{{user_profile.github.username}}.github.io/{{repo.name}}"
+    "author": "{{user_profile.profile.name}}",
+    "github_pages_url": "https://{{user_profile.profile.github.username}}.github.io/{R{repo.name}R}"
 }

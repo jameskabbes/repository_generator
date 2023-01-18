@@ -1,15 +1,18 @@
 import repository_generator
-import kabbes_user_client
-import py_starter as ps
+import kabbes_client
+import user_profile
 
 class Client( repository_generator.RepositoryGenerator ):
 
-    BASE_CONFIG_DICT = {
-        "_Dir": repository_generator._Dir,
-    }
+    _BASE_DICT = {}
 
     def __init__( self, dict={}, **kwargs ):
 
-        dict = ps.merge_dicts( Client.BASE_CONFIG_DICT, dict )
-        self.cfg = kabbes_user_client.Client( dict=dict, **kwargs ).cfg
+        d = {}
+        d.update( Client._BASE_DICT )
+        d.update( dict )
+
+        self.Package = kabbes_client.Package( repository_generator._Dir, dict=d )
+        self.cfg = self.Package.cfg
+
         repository_generator.RepositoryGenerator.__init__( self )
