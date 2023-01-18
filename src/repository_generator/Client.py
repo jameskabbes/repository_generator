@@ -6,7 +6,7 @@ class Client( repository_generator.RepositoryGenerator ):
 
     _BASE_DICT = {}
 
-    def __init__( self, dict={}, **kwargs ):
+    def __init__( self, dict={} ):
 
         d = {}
         d.update( Client._BASE_DICT )
