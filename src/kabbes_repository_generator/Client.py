@@ -1,6 +1,5 @@
 import kabbes_repository_generator
 import kabbes_client
-import user_profile
 
 class Client( kabbes_repository_generator.RepositoryGenerator ):
 
