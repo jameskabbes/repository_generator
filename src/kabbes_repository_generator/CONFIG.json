@@ -55,7 +55,18 @@
             "method":{
                 "name": "lowest"
             }
+        },
+        "version": "{R{repo.eval_version}R}",
+        "!eval_version":{
+            "$ref": "{R{_self}R}",
+            "method":{
+                "name": "get_version",
+                "kwargs": {
+                    "path": "{R{repo.Dir}R}/{{setup_config_filename}}"
+                }
+            }
         }
+
     },
     "author": "{{user_profile.profile.name}}",
     "github_pages_url": "https://{{user_profile.profile.github.username}}.github.io/{R{repo.name}R}"
