@@ -1,8 +1,8 @@
-[GitHub Pages](https://jameskabbes.github.io/repository_generator)<br>
-[PyPI](https://pypi.org/project/kabbes-repository-generator)
-
 # repository_generator
 Package for creating repositories from templates, performing operations on Git repositories
+
+[Documentation](https://jameskabbes.github.io/repository_generator)<br>
+[PyPI](https://pypi.org/project/kabbes-repository-generator)
 
 <br> 
 
