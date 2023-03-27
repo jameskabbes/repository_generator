@@ -1,0 +1,29 @@
+kabbes\_repository\_generator package
+=====================================
+
+Submodules
+----------
+
+kabbes\_repository\_generator.Client module
+-------------------------------------------
+
+.. automodule:: kabbes_repository_generator.Client
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kabbes\_repository\_generator.RepositoryGenerator module
+--------------------------------------------------------
+
+.. automodule:: kabbes_repository_generator.RepositoryGenerator
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kabbes_repository_generator
+   :members:
+   :undoc-members:
+   :show-inheritance:
